@@ -10,7 +10,7 @@ export default function Bookmarks() {
         return allBookmarks.includes(book.ISBN);
       })
     );
-  }, []);
+  }, [allBookmarks]);
   return (
     <>
       {" "}
