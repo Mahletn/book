@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { bookList } from "./Deta";
 import Styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
