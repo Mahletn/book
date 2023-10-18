@@ -69,7 +69,7 @@ function ListOfBooks() {
     if (foundIndex !== -1) {
       allBookmarks.splice(foundIndex, 1);
     }
-    localStorage.setItem("fav-books", JSON.stringify(allBookmarks));
+    localStorage.setItem("fav-books", JSON.stringify(allBookmarks) || []);
   }
 
   useEffect(() => {
@@ -136,7 +136,7 @@ function ListOfBooks() {
               Edit
             </button>
             <button onClick={(e) => handleDelete(e, book._id)}> Delete </button>
-            {JSON.parse(localStorage.getItem("fav-books")).includes(
+            {JSON.parse(localStorage?.getItem("fav-books") || []).includes(
               book.isbn
             ) ? (
               <button onClick={(e) => handleBookmarkRemove(e, book.isbn)}>
