@@ -24,7 +24,7 @@ export default function EditBook({ bookInfo }) {
 
     try {
       await axios.patch(
-        "http://localhost:5000/api/book/" + bookInfo._id,
+        "https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/" + bookInfo._id,
         inputs
       );
       alert("Updated");

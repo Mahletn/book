@@ -24,7 +24,7 @@ export default function CreateBook() {
     // console.log(inputs);
 
     try {
-      await axios.post("http://localhost:5000/api/book/create", inputs);
+      await axios.post("https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/create", inputs);
       alert("Saved");
     } catch (e) {
       alert("Error");

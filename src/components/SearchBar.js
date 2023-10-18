@@ -22,7 +22,7 @@ export default function SearchBar({ setBookListFiltered }) {
       <button
         onClick={() => {
           axios
-            .get("http://localhost:5000/api/book/" + search)
+            .get("https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/" + search)
             .then((res) => {
               setBookListFiltered(res.data);
             })

@@ -34,7 +34,7 @@ function ListOfBooks() {
     e.stopPropagation();
     if (window.confirm("Are you sure you want to remove?")) {
       try {
-        await axios.delete("http://localhost:5000/api/book/" + _id);
+        await axios.delete("https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/" + _id);
         alert("Deleted");
       } catch (err) {
         alert("Error");
@@ -72,7 +72,7 @@ function ListOfBooks() {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/book/all`).then((response) => {
+    axios.get(`https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/all`).then((response) => {
       setBookListFiltered(response.data);
       console.log(response.data);
     });
@@ -144,8 +144,10 @@ function ListOfBooks() {
             )}
           </StyledBook>
         ))}
+         <p>Mahlet &copy; 2023</p>
       </div>
     </React.Fragment>
+   
   );
 }
 export default ListOfBooks;
