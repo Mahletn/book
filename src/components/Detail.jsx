@@ -7,7 +7,7 @@ import EditBook from "./EditBook";
 
 function BookDetil() {
   const { state } = useLocation();
-  const { type, _id, isbn, author, title, imageUrl } = state;
+  const { type, isbn, author, title, imageUrl } = state;
   console.log("detail", state);
   return (
     <React.Fragment>

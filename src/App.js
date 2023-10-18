@@ -4,7 +4,7 @@ import { Toolbar } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import ListOfBooks from "./components/ListOfBooks";
 import Detail from "./components/Detail";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Bookmarks from "./components/Bookmarks";
 // import SearchBar from "./components/SearchBar";
 

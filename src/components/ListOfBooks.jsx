@@ -26,15 +26,16 @@ const StyledImage = styled.img`
 `;
 
 function ListOfBooks() {
-  const { id } = useParams();
-
   const [bookListFiltered, setBookListFiltered] = useState();
   const navigate = useNavigate();
   async function handleDelete(e, _id) {
     e.stopPropagation();
     if (window.confirm("Are you sure you want to remove?")) {
       try {
-        await axios.delete("https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/" + _id);
+        await axios.delete(
+          "https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/" +
+            _id
+        );
         alert("Deleted");
       } catch (err) {
         alert("Error");
@@ -65,17 +66,21 @@ function ListOfBooks() {
 
     let foundIndex = allBookmarks.findIndex((is) => is === isbn);
 
-    if (foundIndex != -1) {
+    if (foundIndex !== -1) {
       allBookmarks.splice(foundIndex, 1);
     }
     localStorage.setItem("fav-books", JSON.stringify(allBookmarks));
   }
 
   useEffect(() => {
-    axios.get(`https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/all`).then((response) => {
-      setBookListFiltered(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get(
+        `https://protected-coast-31790-9e0edf0ca4ce.herokuapp.com/api/book/all`
+      )
+      .then((response) => {
+        setBookListFiltered(response.data);
+        console.log(response.data);
+      });
   }, []);
 
   return (
@@ -144,10 +149,9 @@ function ListOfBooks() {
             )}
           </StyledBook>
         ))}
-         <p>Mahlet &copy; 2023</p>
+        <p>Mahlet &copy; 2023</p>
       </div>
     </React.Fragment>
-   
   );
 }
 export default ListOfBooks;
