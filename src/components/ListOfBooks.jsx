@@ -136,9 +136,8 @@ function ListOfBooks() {
               Edit
             </button>
             <button onClick={(e) => handleDelete(e, book._id)}> Delete </button>
-            {JSON.parse(localStorage?.getItem("fav-books") || []).includes(
-              book.isbn
-            ) ? (
+            {JSON.parse(localStorage?.getItem("fav-books")) ||
+            [].includes(book.isbn) ? (
               <button onClick={(e) => handleBookmarkRemove(e, book.isbn)}>
                 Remove Favorite
               </button>
