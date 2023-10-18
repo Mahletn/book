@@ -4,13 +4,15 @@ import { bookList } from "./Deta";
 export default function Bookmarks() {
   const [filteredBooks, setFilteredBooks] = useState([]);
   const allBookmarks = JSON.parse(localStorage.getItem("fav-books")) ?? [];
+
   useEffect(() => {
     setFilteredBooks(
       bookList.filter((book) => {
         return allBookmarks.includes(book.ISBN);
       })
     );
-  }, [allBookmarks]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       {" "}
