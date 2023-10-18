@@ -8,7 +8,7 @@ import { AppBar, Box, CssBaseline, Divider, IconButton, List, ListItem, ListItem
  
     const drawerWidth = 240;
     const navItems = ['List of Books', 'Detail'];
-    
+  
     function DrawerAppBar(props) {
       const { window } = props;
       const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -56,13 +56,14 @@ import { AppBar, Box, CssBaseline, Divider, IconButton, List, ListItem, ListItem
                 variant="h6"
                 component="div"
                 sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                onClick={()=> naviget("/")}
               >
                 Book Finder Objective
               </Typography>
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {navItems.map((item) => (
-                  <Button key={item} sx={{ color: '#fff' }}>
-                    {item}
+                  <Button onClick={()=> naviget(item.path)} key={item.naviget} sx={{ color: '#fff' }}>
+                    {item.naviget}
                   </Button>
                 ))}
               </Box>
@@ -75,7 +76,7 @@ import { AppBar, Box, CssBaseline, Divider, IconButton, List, ListItem, ListItem
               open={mobileOpen}
               onClose={handleDrawerToggle}
               ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
+                keepMounted: true, 
               }}
               sx={{
                 display: { xs: 'block', sm: 'none' },
